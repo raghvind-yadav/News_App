@@ -10,6 +10,7 @@ class News{
   final String publishedAt;
   final String content;
   News({required this.source,required this.author,required this.title,required this.description,required this.url,required this.urltoImage,required this.publishedAt,required this.content});
+  
   factory News.fromJson(Map<String,dynamic> map){
     return News(
     source: map['source'],
