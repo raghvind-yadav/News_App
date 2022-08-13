@@ -39,12 +39,12 @@ class NewsDetailScreen extends StatelessWidget {
             child: GestureDetector(
               onTap: () => Navigator.of(context).pop(),
               child: Container(
-                height: 55,
-                width: 55,
+                height: 50,
+                width: 50,
                 decoration: BoxDecoration(
                     color: Colors.black54,
                     borderRadius: BorderRadius.circular(30)),
-                child: Icon(Icons.arrow_back,size: 35,color: Colors.white,),
+                child: Icon(Icons.arrow_back,size: 30,color: Colors.white,),
               ),
             ),
           ),
@@ -64,11 +64,12 @@ class NewsDetailScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 24,right: 5),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       author,
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Color(0xffbababa)),
                     ),
@@ -77,7 +78,7 @@ class NewsDetailScreen extends StatelessWidget {
                     ),
                     Text(publishedAt,
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Color(0xffbababa)))
                   ],
