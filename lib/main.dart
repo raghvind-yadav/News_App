@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
        fontFamily: 'RobotoSlab',
         // primarySwatch: Colors.,
       ),
+      debugShowCheckedModeBanner: false,
       home: const Headlines(),
     );
   }
