@@ -80,29 +80,28 @@ class _HeadlinesState extends State<Headlines> {
           return ListView.builder(
               itemCount: newData!.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Stack(alignment: Alignment.bottomLeft, children: [
-                    Container(
-                      child: Image.network(
-                          newData[index]['urlToImage'].toString()),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NewsDetailScreen(
-                                    title: newData[index]['title'].toString(),
-                                    urltoImage:
-                                        newData[index]['urlToImage'].toString(),
-                                    author: newData[index]['author'].toString(),
-                                    content:
-                                        newData[index]['content'].toString(),
-                                    publishedAt: newData[index]['publishedAt']
-                                        .toString())));
-                      },
-                      child: Column(
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NewsDetailScreen(
+                                title: newData[index]['title'].toString(),
+                                urltoImage:
+                                    newData[index]['urlToImage'].toString(),
+                                author: newData[index]['author'].toString(),
+                                content: newData[index]['content'].toString(),
+                                publishedAt:
+                                    newData[index]['publishedAt'].toString())));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Stack(alignment: Alignment.bottomLeft, children: [
+                      Container(
+                        child: Image.network(
+                            newData[index]['urlToImage'].toString()),
+                      ),
+                      Column(
                         children: [
                           Text(
                             newData[index]['title'],
@@ -135,9 +134,9 @@ class _HeadlinesState extends State<Headlines> {
                             height: 12,
                           )
                         ],
-                      ),
-                    )
-                  ]),
+                      )
+                    ]),
+                  ),
                 );
               });
         },
